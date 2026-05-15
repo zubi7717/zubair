@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Muhammad Zubair Chughtai — Digital Marketing Expert | Riyadh, KSA</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #E8C97A;
+    --dark: #0D0D0D;
+    --dark-2: #161616;
+    --dark-3: #1F1F1F;
+    --dark-4: #2A2A2A;
+    --text: #F0EDE6;
+    --text-muted: #9A9186;
+    --text-dim: #5C5650;
+    --border: rgba(201,168,76,0.2);
+    --border-subtle: rgba(255,255,255,0.06);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--dark);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.2rem 3rem;
+    background: rgba(13,13,13,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 0.5px solid var(--border-subtle);
+  }
+  .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--gold); letter-spacing: 0.05em; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.3s; }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-cta { background: var(--gold); color: var(--dark); padding: 0.55rem 1.4rem; border-radius: 2px; font-size: 0.8rem; font-weight: 600; text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: background 0.3s; }
+  .nav-cta:hover { background: var(--gold-light); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex; align-items: center;
+    padding: 8rem 3rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; top: 0; right: 0; bottom: 0;
+    width: 45%;
+    background: linear-gradient(135deg, transparent 0%, rgba(201,168,76,0.04) 100%);
+    border-left: 0.5px solid var(--border);
+  }
+  .hero-grid-bg {
+    position: absolute; inset: 0; opacity: 0.03;
+    background-image: linear-gradient(var(--gold) 1px, transparent 1px), linear-gradient(90deg, var(--gold) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .hero-content { position: relative; z-index: 2; max-width: 700px; }
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: 8px;
+    border: 0.5px solid var(--border); padding: 0.4rem 1rem; border-radius: 2px;
+    font-size: 0.75rem; color: var(--gold); letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500;
+    margin-bottom: 1.5rem;
+  }
+  .hero-tag::before { content: ''; width: 6px; height: 6px; background: var(--gold); border-radius: 50%; }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.8rem, 5vw, 4.2rem);
+    line-height: 1.1;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+  }
+  .hero h1 span { color: var(--gold); display: block; }
+  .hero-sub { font-size: 1.05rem; color: var(--text-muted); max-width: 520px; margin-bottom: 2.5rem; font-weight: 300; line-height: 1.8; }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 3.5rem; }
+  .btn-primary { background: var(--gold); color: var(--dark); padding: 0.85rem 2rem; border-radius: 2px; font-size: 0.88rem; font-weight: 600; text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase; transition: background 0.3s; }
+  .btn-primary:hover { background: var(--gold-light); }
+  .btn-outline { border: 0.5px solid var(--border); color: var(--text); padding: 0.85rem 2rem; border-radius: 2px; font-size: 0.88rem; font-weight: 500; text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase; transition: border-color 0.3s, color 0.3s; }
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+  .hero-stats { display: flex; gap: 2.5rem; padding-top: 2rem; border-top: 0.5px solid var(--border-subtle); }
+  .stat-item .stat-n { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--gold); font-weight: 700; line-height: 1; }
+  .stat-item .stat-l { font-size: 0.78rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 4px; }
+
+  /* SECTION LAYOUT */
+  section { padding: 5rem 3rem; }
+  .section-label {
+    display: flex; align-items: center; gap: 12px;
+    font-size: 0.72rem; color: var(--gold); letter-spacing: 0.18em; text-transform: uppercase; font-weight: 500;
+    margin-bottom: 1rem;
+  }
+  .section-label::after { content: ''; flex: 1; height: 0.5px; background: var(--border); max-width: 80px; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 700; margin-bottom: 1rem; }
+  .section-sub { color: var(--text-muted); max-width: 500px; line-height: 1.8; font-weight: 300; margin-bottom: 3rem; }
+
+  /* RESULTS / CAMPAIGN STATS */
+  .results-bg { background: var(--dark-2); }
+  .results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1px; background: var(--border); border: 0.5px solid var(--border); border-radius: 4px; overflow: hidden; margin-bottom: 3rem; }
+  .result-card { background: var(--dark-2); padding: 2rem 1.5rem; transition: background 0.3s; }
+  .result-card:hover { background: var(--dark-3); }
+  .result-card .rc-label { font-size: 0.75rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem; }
+  .result-card .rc-num { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--gold); font-weight: 700; line-height: 1; margin-bottom: 0.3rem; }
+  .result-card .rc-desc { font-size: 0.82rem; color: var(--text-muted); }
+  .result-card .rc-badge { display: inline-block; font-size: 0.7rem; background: rgba(201,168,76,0.12); color: var(--gold); padding: 2px 8px; border-radius: 2px; margin-top: 6px; }
+
+  .campaign-blocks { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+  .campaign-block {
+    border: 0.5px solid var(--border); border-radius: 4px; padding: 1.8rem;
+    position: relative; overflow: hidden;
+    transition: border-color 0.3s;
+  }
+  .campaign-block:hover { border-color: var(--gold); }
+  .campaign-block::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--gold); }
+  .campaign-block .cb-title { font-size: 0.72rem; color: var(--gold); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 1rem; }
+  .campaign-block .cb-metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .cb-metric .cbm-v { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--text); font-weight: 700; }
+  .cb-metric .cbm-l { font-size: 0.75rem; color: var(--text-muted); }
+  .cb-metric .cbm-up { font-size: 0.75rem; color: #4ade80; }
+
+  /* SERVICES */
+  .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
+  .service-card {
+    border: 0.5px solid var(--border-subtle); border-radius: 4px; padding: 2rem;
+    transition: border-color 0.3s, background 0.3s;
+    cursor: default;
+  }
+  .service-card:hover { border-color: var(--border); background: var(--dark-2); }
+  .service-icon { width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; background: rgba(201,168,76,0.08); border: 0.5px solid var(--border); border-radius: 4px; margin-bottom: 1.2rem; }
+  .service-icon svg { width: 22px; height: 22px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
+  .service-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.6rem; }
+  .service-card p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.7; }
+  .service-price { display: inline-block; font-size: 0.75rem; color: var(--gold); margin-top: 1rem; padding: 3px 10px; border: 0.5px solid var(--border); border-radius: 2px; }
+
+  /* CERTIFICATIONS */
+  .certs-bg { background: var(--dark-2); }
+  .certs-grid { display: flex; flex-wrap: wrap; gap: 1rem; }
+  .cert-pill {
+    display: flex; align-items: center; gap: 10px;
+    border: 0.5px solid var(--border); padding: 0.7rem 1.2rem; border-radius: 2px;
+    font-size: 0.82rem; transition: border-color 0.3s;
+  }
+  .cert-pill:hover { border-color: var(--gold); }
+  .cert-dot { width: 8px; height: 8px; background: var(--gold); border-radius: 50%; flex-shrink: 0; }
+  .cert-pill span { color: var(--text-muted); }
+  .cert-pill strong { color: var(--text); font-weight: 500; }
+
+  /* EXPERIENCE TIMELINE */
+  .timeline { position: relative; padding-left: 2rem; }
+  .timeline::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 0.5px; background: var(--border); }
+  .timeline-item { position: relative; padding-bottom: 3rem; }
+  .timeline-item::before { content: ''; position: absolute; left: -2rem; top: 6px; width: 10px; height: 10px; background: var(--gold); border-radius: 50%; transform: translateX(-4.75px); }
+  .timeline-item:last-child { padding-bottom: 0; }
+  .tl-date { font-size: 0.72rem; color: var(--gold); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.3rem; }
+  .tl-company { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; margin-bottom: 0.2rem; }
+  .tl-role { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 1rem; }
+  .tl-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+  .tl-bullets li { font-size: 0.88rem; color: var(--text-muted); padding-left: 1rem; position: relative; line-height: 1.6; }
+  .tl-bullets li::before { content: '—'; position: absolute; left: 0; color: var(--text-dim); }
+
+  /* CONTACT */
+  .contact-wrapper {
+    border: 0.5px solid var(--border); border-radius: 4px; padding: 3rem;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;
+    background: var(--dark-2);
+  }
+  .contact-info h2 { font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 1rem; }
+  .contact-info p { color: var(--text-muted); line-height: 1.8; font-weight: 300; margin-bottom: 1.5rem; }
+  .contact-detail { display: flex; align-items: center; gap: 12px; margin-bottom: 0.8rem; font-size: 0.88rem; }
+  .contact-detail .cd-icon { width: 32px; height: 32px; background: rgba(201,168,76,0.08); border: 0.5px solid var(--border); border-radius: 2px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .contact-detail .cd-icon svg { width: 14px; height: 14px; stroke: var(--gold); fill: none; stroke-width: 2; }
+  .contact-detail a { color: var(--text); text-decoration: none; }
+  .contact-detail a:hover { color: var(--gold); }
+  .contact-right { display: flex; flex-direction: column; gap: 0.8rem; }
+  .contact-right h3 { font-size: 0.88rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem; }
+  .package-item { border: 0.5px solid var(--border-subtle); padding: 1rem 1.2rem; border-radius: 2px; }
+  .package-item .pkg-name { font-size: 0.88rem; font-weight: 600; margin-bottom: 0.3rem; }
+  .package-item .pkg-price { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--gold); margin-bottom: 0.3rem; }
+  .package-item .pkg-desc { font-size: 0.78rem; color: var(--text-muted); }
+
+  /* FOOTER */
+  footer { padding: 2rem 3rem; border-top: 0.5px solid var(--border-subtle); display: flex; justify-content: space-between; align-items: center; }
+  footer p { font-size: 0.78rem; color: var(--text-dim); }
+  .footer-name { font-family: 'Playfair Display', serif; color: var(--gold); font-size: 0.9rem; }
+
+  /* HIGHLIGHT BAR */
+  .highlight-bar { background: var(--gold); padding: 0.7rem 3rem; display: flex; align-items: center; gap: 3rem; overflow-x: auto; }
+  .hb-item { display: flex; align-items: center; gap: 8px; white-space: nowrap; font-size: 0.78rem; font-weight: 600; color: var(--dark); text-transform: uppercase; letter-spacing: 0.08em; }
+  .hb-sep { color: rgba(0,0,0,0.3); font-size: 1.2rem; }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    section { padding: 3.5rem 1.5rem; }
+    .hero { padding: 6rem 1.5rem 3rem; }
+    .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
+    .contact-wrapper { grid-template-columns: 1fr; gap: 2rem; }
+    footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+    .highlight-bar { padding: 0.7rem 1.5rem; gap: 2rem; }
+  }
+
+  .fade-in { animation: fadeUp 0.7s ease both; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  .delay-1 { animation-delay: 0.1s; }
+  .delay-2 { animation-delay: 0.2s; }
+  .delay-3 { animation-delay: 0.3s; }
+  .delay-4 { animation-delay: 0.4s; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Zubair Chughtai</div>
+  <ul class="nav-links">
+    <li><a href="#results">Results</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="https://wa.me/966570682386" class="nav-cta">Hire Me</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-content">
+    <div class="hero-tag fade-in">Available for Freelance · Riyadh, KSA</div>
+    <h1 class="fade-in delay-1">
+      Digital Marketing
+      <span>That Drives Real</span>
+      Results.
+    </h1>
+    <p class="hero-sub fade-in delay-2">6+ years managing Google Ads, Meta campaigns, SEO, and social media for businesses in Saudi Arabia. Google Certified. HubSpot Certified. Based in Riyadh.</p>
+    <div class="hero-actions fade-in delay-3">
+      <a href="https://wa.me/966570682386" class="btn-primary">WhatsApp Me</a>
+      <a href="#results" class="btn-outline">See My Results</a>
+    </div>
+    <div class="hero-stats fade-in delay-4">
+      <div class="stat-item">
+        <div class="stat-n">6+</div>
+        <div class="stat-l">Years Experience</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-n">409K+</div>
+        <div class="stat-l">Ad Impressions Managed</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-n">1,400+</div>
+        <div class="stat-l">Conversions Generated</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-n">5</div>
+        <div class="stat-l">Google & HubSpot Certs</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HIGHLIGHT BAR -->
+<div class="highlight-bar">
+  <div class="hb-item">✓ Google Ads Search Certified</div>
+  <div class="hb-sep">·</div>
+  <div class="hb-item">✓ AI-Powered Performance Ads</div>
+  <div class="hb-sep">·</div>
+  <div class="hb-item">✓ HubSpot Digital Marketing</div>
+  <div class="hb-sep">·</div>
+  <div class="hb-item">✓ HubSpot SEO II Certified</div>
+  <div class="hb-sep">·</div>
+  <div class="hb-item">✓ Social Media Marketing II</div>
+  <div class="hb-sep">·</div>
+  <div class="hb-item">✓ Transferable Iqama · Riyadh</div>
+</div>
+
+<!-- RESULTS -->
+<section id="results" class="results-bg">
+  <div class="section-label">Campaign Performance</div>
+  <h2 class="section-title">Real Numbers. Real Campaigns.</h2>
+  <p class="section-sub">Actual Google Ads results from campaigns I personally managed in Saudi Arabia — no estimates, no mock data.</p>
+
+  <!-- Cumulative Stats -->
+  <div class="results-grid">
+    <div class="result-card">
+      <div class="rc-label">Total Impressions</div>
+      <div class="rc-num">409K+</div>
+      <div class="rc-desc">Across multiple KSA campaigns</div>
+      <div class="rc-badge">Dec 2025 – May 2026</div>
+    </div>
+    <div class="result-card">
+      <div class="rc-label">Total Conversions</div>
+      <div class="rc-num">1,417</div>
+      <div class="rc-desc">Phone calls, form submissions & leads</div>
+      <div class="rc-badge">Verified in Google Ads</div>
+    </div>
+    <div class="result-card">
+      <div class="rc-label">Total Clicks</div>
+      <div class="rc-num">20,963</div>
+      <div class="rc-desc">High-intent traffic to client websites</div>
+      <div class="rc-badge">5.12% avg CTR</div>
+    </div>
+    <div class="result-card">
+      <div class="rc-label">Total Ad Spend Managed</div>
+      <div class="rc-num">SAR 5,764</div>
+      <div class="rc-desc">Cost-efficient budget management</div>
+      <div class="rc-badge">~SAR 0.27 per click avg</div>
+    </div>
+  </div>
+
+  <!-- Campaign Breakdowns -->
+  <div class="campaign-blocks">
+    <div class="campaign-block">
+      <div class="cb-title">Campaign A — High Volume</div>
+      <div class="cb-metrics">
+        <div class="cb-metric"><div class="cbm-v">231K</div><div class="cbm-l">Impressions</div></div>
+        <div class="cb-metric"><div class="cbm-v">12,436</div><div class="cbm-l">Clicks</div></div>
+        <div class="cb-metric"><div class="cbm-v">39</div><div class="cbm-l">Conversions</div><div class="cbm-up">↑ +29 vs prev</div></div>
+        <div class="cb-metric"><div class="cbm-v">SAR 904</div><div class="cbm-l">Spend</div></div>
+      </div>
+    </div>
+    <div class="campaign-block">
+      <div class="cb-title">Campaign B — Lead Generation</div>
+      <div class="cb-metrics">
+        <div class="cb-metric"><div class="cbm-v">5,253</div><div class="cbm-l">Impressions</div></div>
+        <div class="cb-metric"><div class="cbm-v">575</div><div class="cbm-l">Clicks</div></div>
+        <div class="cb-metric"><div class="cbm-v">30</div><div class="cbm-l">Conversions</div><div class="cbm-up">↑ +3 vs prev</div></div>
+        <div class="cb-metric"><div class="cbm-v">SAR 2,843</div><div class="cbm-l">Spend</div></div>
+      </div>
+    </div>
+    <div class="campaign-block">
+      <div class="cb-title">Campaign C — Phone Call Leads</div>
+      <div class="cb-metrics">
+        <div class="cb-metric"><div class="cbm-v">1,070</div><div class="cbm-l">Phone Leads</div></div>
+        <div class="cb-metric"><div class="cbm-v">14.5K</div><div class="cbm-l">Impressions</div></div>
+        <div class="cb-metric"><div class="cbm-v">SAR 0.90</div><div class="cbm-l">Avg CPC</div></div>
+        <div class="cb-metric"><div class="cbm-v">SAR 2.13K</div><div class="cbm-l">Spend</div></div>
+      </div>
+    </div>
+    <div class="campaign-block">
+      <div class="cb-title">Campaign D — Oct–Nov 2025</div>
+      <div class="cb-metrics">
+        <div class="cb-metric"><div class="cbm-v">856</div><div class="cbm-l">Phone Leads</div></div>
+        <div class="cb-metric"><div class="cbm-v">50.3K</div><div class="cbm-l">Impressions</div></div>
+        <div class="cb-metric"><div class="cbm-v">SAR 0.98</div><div class="cbm-l">Avg CPC</div></div>
+        <div class="cb-metric"><div class="cbm-v">SAR 1.47K</div><div class="cbm-l">Spend</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-label">What I Offer</div>
+  <h2 class="section-title">Services for Riyadh Businesses</h2>
+  <p class="section-sub">From setup to optimization — I handle your digital presence end-to-end so you can focus on running your business.</p>
+
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      </div>
+      <h3>Google Ads Management</h3>
+      <p>Search, display & call campaigns built for the Saudi market. Keyword research, A/B testing, conversion tracking, and monthly performance reports included.</p>
+      <span class="service-price">From SAR 1,800/month</span>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+      </div>
+      <h3>Website Design & Build</h3>
+      <p>Fast, mobile-optimized websites tailored for the KSA market. Includes on-page SEO, Arabic/English support, and Google Analytics setup.</p>
+      <span class="service-price">From SAR 2,500 one-time</span>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M22 4s-2.5 2.5-5 3c-2.5.5-5.5-1-7 1-1.5 2 .5 4 2 6 1 1.5 1 3 0 4"/><path d="M2 20c2-2 4-3 6-2.5S12 21 14 20"/></svg>
+      </div>
+      <h3>Social Media Management</h3>
+      <p>Instagram, Facebook, TikTok & X content strategy. Branded posts, captions in Arabic & English, scheduling, and engagement monitoring.</p>
+      <span class="service-price">From SAR 1,200/month</span>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M3 3h18v18H3z"/><path d="M3 9h18M9 21V9"/></svg>
+      </div>
+      <h3>SEO Optimization</h3>
+      <p>On-page and technical SEO to rank your business for high-intent Arabic and English keywords. Keyword mapping, meta optimization, and local SEO for Riyadh.</p>
+      <span class="service-price">From SAR 1,500/month</span>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+      </div>
+      <h3>Full Marketing Package</h3>
+      <p>Website + Google Ads + Social Media + Monthly Report. The complete solution for businesses ready to grow their digital presence in Riyadh.</p>
+      <span class="service-price">From SAR 3,500/month</span>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+      </div>
+      <h3>Marketing Audit & Strategy</h3>
+      <p>One-time deep dive into your current digital presence. I identify what's costing you leads and create a clear 90-day action plan to fix it.</p>
+      <span class="service-price">SAR 800 one-time</span>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section class="certs-bg">
+  <div class="section-label">Credentials</div>
+  <h2 class="section-title">Certified Across All Major Platforms</h2>
+  <p class="section-sub">Verified certifications from Google and HubSpot — the industry standard for digital marketing professionals.</p>
+  <div class="certs-grid">
+    <div class="cert-pill"><div class="cert-dot"></div><strong>Google Ads Search</strong> <span>— Certified Jan 2026</span></div>
+    <div class="cert-pill"><div class="cert-dot"></div><strong>Google AI-Powered Performance Ads</strong> <span>— Certified Jan 2026</span></div>
+    <div class="cert-pill"><div class="cert-dot"></div><strong>HubSpot Digital Marketing</strong> <span>— Valid to Feb 2027</span></div>
+    <div class="cert-pill"><div class="cert-dot"></div><strong>HubSpot Social Media</strong> <span>— Valid to Feb 2028</span></div>
+    <div class="cert-pill"><div class="cert-dot"></div><strong>HubSpot Social Media Marketing II</strong> <span>— Valid to Mar 2028</span></div>
+    <div class="cert-pill"><div class="cert-dot"></div><strong>HubSpot SEO Certified</strong> <span>— Valid to May 2027</span></div>
+    <div class="cert-pill"><div class="cert-dot"></div><strong>HubSpot SEO II Certified</strong> <span>— Valid to May 2028</span></div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-label">Work History</div>
+  <h2 class="section-title">6+ Years of Proven Experience</h2>
+  <p class="section-sub">From Pakistan's industrial sector to Saudi Arabia's luxury market — consistent digital marketing results across industries.</p>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="tl-date">Feb 2025 — Present</div>
+      <div class="tl-company">Quraishi Marble, Riyadh KSA</div>
+      <div class="tl-role">Marketing Manager</div>
+      <ul class="tl-bullets">
+        <li>Developed multichannel ad strategies across Google, Meta, Instagram & X — achieving 60% increase in qualified showroom leads</li>
+        <li>Managed end-to-end Google & Meta campaigns with audience segmentation and A/B testing for premium marble brand</li>
+        <li>Led digital marketing for multiple Riyadh locations with culturally-tailored Arabic/English messaging</li>
+        <li>Drove data-backed website improvements using Google Analytics, boosting conversion rates</li>
+      </ul>
+    </div>
+    <div class="timeline-item">
+      <div class="tl-date">Feb 2021 — July 2024</div>
+      <div class="tl-company">Hexon Chemicals (Pvt.) Ltd, Punjab</div>
+      <div class="tl-role">Marketing Manager</div>
+      <ul class="tl-bullets">
+        <li>Spearheaded performance-driven Google Ads, Facebook & Instagram advertising with focus on high-impact lead generation</li>
+        <li>Managed marketing budgets for cost-effective spend and maximum campaign ROI</li>
+        <li>Optimized PPC campaigns through continuous A/B testing of ad copy and landing pages</li>
+        <li>Achieved first-page Google rankings for high-intent keywords through targeted SEO strategies</li>
+      </ul>
+    </div>
+    <div class="timeline-item">
+      <div class="tl-date">Sep 2019 — Feb 2020</div>
+      <div class="tl-company">Itifaq Group of Industries, Punjab</div>
+      <div class="tl-role">Digital Marketing Manager</div>
+      <ul class="tl-bullets">
+        <li>Managed Google and Instagram ad campaigns to increase brand awareness within budget</li>
+        <li>Grew social media follower engagement significantly through consistent content strategy</li>
+        <li>Improved ad performance through A/B testing of copy and landing pages</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-wrapper">
+    <div class="contact-info">
+      <div class="section-label" style="margin-bottom:0.8rem;">Get In Touch</div>
+      <h2>Let's Grow Your Business in Riyadh</h2>
+      <p>I work with a small number of clients at a time to ensure quality results. If you're a business in Riyadh looking to get more customers through digital marketing, let's talk.</p>
+      <div class="contact-detail">
+        <div class="cd-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+        <div><a href="https://wa.me/966570682386">+966 570 682 386 (WhatsApp)</a></div>
+      </div>
+      <div class="contact-detail">
+        <div class="cd-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+        <div><a href="mailto:zubairchughtai0@gmail.com">zubairchughtai0@gmail.com</a></div>
+      </div>
+      <div class="contact-detail">
+        <div class="cd-icon"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></div>
+        <div><a href="https://www.linkedin.com/in/zubair-chughtai-840057326/" target="_blank">linkedin.com/in/zubair-chughtai</a></div>
+      </div>
+      <div class="contact-detail">
+        <div class="cd-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div>Riyadh, Kingdom of Saudi Arabia</div>
+      </div>
+    </div>
+    <div class="contact-right">
+      <h3>Service Packages</h3>
+      <div class="package-item">
+        <div class="pkg-name">Starter</div>
+        <div class="pkg-price">SAR 800–1,200/mo</div>
+        <div class="pkg-desc">Social media management · 12 posts/month · Basic page management</div>
+      </div>
+      <div class="package-item">
+        <div class="pkg-name">Growth</div>
+        <div class="pkg-price">SAR 1,800–2,500/mo</div>
+        <div class="pkg-desc">Social media + Google Ads management · Monthly performance report</div>
+      </div>
+      <div class="package-item">
+        <div class="pkg-name">Full Marketing</div>
+        <div class="pkg-price">SAR 3,500–5,000/mo</div>
+        <div class="pkg-desc">Website + Social media + Google Ads + Monthly detailed report</div>
+      </div>
+      <a href="https://wa.me/966570682386?text=Hi%20Zubair%2C%20I%20saw%20your%20portfolio%20and%20I%27m%20interested%20in%20your%20marketing%20services." class="btn-primary" style="text-align:center; margin-top:0.5rem;">Start on WhatsApp →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-name">Muhammad Zubair Chughtai</span>
+  <p>Digital Marketing Freelancer · Riyadh, KSA · Google & HubSpot Certified</p>
+</footer>
+
+</body>
+</html>
